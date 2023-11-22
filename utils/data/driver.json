@@ -1,6 +1,6 @@
 {
   "-NjYnXK2HAOfO4wCpgN_": {
-    "id": "-NjYnXK2HAOfO4wCpgN_",
+    "firebaseKey": "-NjYnXK2HAOfO4wCpgN_",
     "image": "http://dummyimage.com/149x100.png/cc0000/ffffff",
     "driver_name": "Riane Dragonette",
     "vehicle_type": "LX",
@@ -11,7 +11,7 @@
     "uid": "d14a7e69e3e7508ff2aa5399debd274f071378efcb03cb0954f8b789dd186c35"
   },
   "-NjYnXK3GLdGOP_4xGl1": {
-    "id": "-NjYnXK3GLdGOP_4xGl1",
+    "firebaseKey": "-NjYnXK3GLdGOP_4xGl1",
     "image": "http://dummyimage.com/237x100.png/5fa2dd/ffffff",
     "driver_name": "Quent McGarrahan",
     "vehicle_type": "Escape",
@@ -22,7 +22,7 @@
     "uid": "fb9ec7f63252f9f27daffb9dc567317d762056c99326e6b47335fc74d98aa931"
   },
   "-NjYnXK4sbcdahallhTt": {
-    "id": "-NjYnXK4sbcdahallhTt",
+    "firebaseKey": "-NjYnXK4sbcdahallhTt",
     "image": "http://dummyimage.com/165x100.png/5fa2dd/ffffff",
     "driver_name": "Lindy Heckner",
     "vehicle_type": "Escalade EXT",
@@ -33,7 +33,7 @@
     "uid": "0cd7fb4e3bece308abbf3b0d528e34dc4fed146576ad413d3ca34f35cb49cbb4"
   },
   "-NjYnXK5RIYf_v_10Trh": {
-    "id": "-NjYnXK5RIYf_v_10Trh",
+    "firebaseKey": "-NjYnXK5RIYf_v_10Trh",
     "image": "http://dummyimage.com/134x100.png/dddddd/000000",
     "driver_name": "Tamqrah Hamel",
     "vehicle_type": "E150",
@@ -44,7 +44,7 @@
     "uid": "f0af560d025e52b47519f2b7784d768ec4e90fcb526c6f2322a872ffadbaf488"
   },
   "-NjYnXK7T50tL6FS4s6N": {
-    "id": "-NjYnXK7T50tL6FS4s6N",
+    "firebaseKey": "-NjYnXK7T50tL6FS4s6N",
     "image": "http://dummyimage.com/146x100.png/dddddd/000000",
     "driver_name": "Barry McCluney",
     "vehicle_type": "Crown Victoria",
@@ -55,7 +55,7 @@
     "uid": "9f4f77d9951b00c2caf07b295e0489567611b36e1c07384567c5f9a0994dcbf9"
   },
   "-NjYnXK8k_PZZem88FT2": {
-    "id": "-NjYnXK8k_PZZem88FT2",
+    "firebaseKey": "-NjYnXK8k_PZZem88FT2",
     "image": "http://dummyimage.com/142x100.png/5fa2dd/ffffff",
     "driver_name": "Frannie Collip",
     "vehicle_type": "Altima",

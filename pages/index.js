@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap'; // TODO: COMMENT IN FOR AUTH
 import { getDrivers } from '../api/driverData';
-// import { signOut } from '../utils/auth'; // TODO: COMMENT IN FOR AUTH
 import { useAuth } from '../utils/context/authContext'; // TODO: COMMENT IN FOR AUTH
 import DriverCard from '../components/DriverCard';
 
@@ -27,15 +26,11 @@ function Home() {
       </Link>
       <div className="d-flex flex-wrap">
         {drivers?.map((driver) => (
-          <DriverCard key={driver.id} driverObj={driver} onUpdate={getAllTheDrivers} />
+          <DriverCard key={driver.firebasekey} driverObj={driver} onUpdate={getAllTheDrivers} />
         ))}
       </div>
     </div>
   );
-
-  // <h1>Hello {user.displayName}! </h1>
-  // </div>
-  // );
 }
 
 export default Home;

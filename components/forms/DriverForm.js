@@ -22,7 +22,7 @@ function DriverForm({ driverObj }) {
   const { user } = useAuth();
 
   useEffect(() => {
-    if (driverObj.id) setFormInput(driverObj);
+    if (driverObj.firebaseKey) setFormInput(driverObj);
   }, [driverObj, user]);
 
   const handleChange = (e) => {
@@ -35,8 +35,8 @@ function DriverForm({ driverObj }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (driverObj.id) {
-      updateDriver(formInput).then(() => router.push(`/driver/${driverObj.id}`));
+    if (driverObj.firebaseKey) {
+      updateDriver(formInput).then(() => router.push(`/driver/${driverObj.firebaseKey}`));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createDriver(payload).then(({ name }) => {
@@ -50,7 +50,7 @@ function DriverForm({ driverObj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h1 className="text-white mt-5">{driverObj.id ? 'Update' : 'Create'} driverObject</h1>
+      <h1 className="text-white mt-5">{driverObj.firebaseKey ? 'Update' : 'Create'} driverObject</h1>
 
       <FloatingLabel controlId="floatingInput1" label="Driver Image" className="mb-3">
         <Form.Control
@@ -111,6 +111,17 @@ function DriverForm({ driverObj }) {
         />
       </FloatingLabel>
 
+      <FloatingLabel controlId="floatingInput7" label="Driver Phone Number" className="mb-3">
+        <Form.Control
+          type="text"
+          placeholder="Driver Phone Number"
+          name="phoneNumber"
+          value={formInput.phoneNumber}
+          onChange={handleChange}
+          required
+        />
+      </FloatingLabel>
+
       <FloatingLabel controlId="floatingInput6" label="Warehouse Number" className="mb-3">
         <Form.Control
           type="text"
@@ -122,14 +133,14 @@ function DriverForm({ driverObj }) {
         />
       </FloatingLabel>
 
-      <Button type="submit">{driverObj.id ? 'Update' : 'Create'} Drivers</Button>
+      <Button type="submit">{driverObj.firebaseKey ? 'Update' : 'Create'} Drivers</Button>
     </Form>
   );
 }
 
 DriverForm.propTypes = {
   driverObj: PropTypes.shape({
-    id: PropTypes.string,
+    firebaseKey: PropTypes.string,
     image: PropTypes.string,
     driver_name: PropTypes.string,
     vehicle_type: PropTypes.string,
