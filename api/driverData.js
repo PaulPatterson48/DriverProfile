@@ -13,8 +13,8 @@ const getDrivers = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 // substituded firebaseKey for id
-const deleteDriver = (id) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/driver/${id}.json`, {
+const deleteDriver = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/driver/${firebaseKey}.json`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -36,8 +36,8 @@ const createDriver = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getSingleDriver = (id) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/driver/${id}.json`, {
+const getSingleDriver = (firebaeKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/driver/${firebaeKey}.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const getSingleDriver = (id) => new Promise((resolve, reject) => {
 });
 
 const updateDriver = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/driver/${payload.id}.json`, {
+  fetch(`${endpoint}/driver/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'applicaiton/json',
@@ -59,8 +59,8 @@ const updateDriver = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getDriverByWarehouse = (id) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/driver.json?orderBy="warehouse_id"&equalTo="${id}"`, {
+const getDriverByWarehouse = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/driver.json?orderBy="warehouse_id"&equalTo="${firebaseKey}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
