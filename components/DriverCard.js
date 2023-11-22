@@ -10,7 +10,7 @@ function DriverCard({ driverObj, onUpdate }) {
   // Pass the function from the parent that gets the Driver
   const deleteThisDriver = () => {
     if (window.confirm(`Delete ${driverObj}.name}?`)) {
-      deleteDriver(driverObj.id).then(() => onUpdate());
+      deleteDriver(driverObj.firebaseKey).then(() => onUpdate());
     }
   };
 
@@ -20,7 +20,10 @@ function DriverCard({ driverObj, onUpdate }) {
       <Card.Body>
         <Card.Title>{driverObj?.driver_name}</Card.Title>
         <p className="card-text bold">{driverObj?.vehicle_type}</p>
-        <Link href={`driver/edit/${driverObj?.id}`} passHref>
+        <p className="card-text bold">{driverObj?.route}</p>
+        <p className="card-text bold">{driverObj?.ThreePlCompany}</p>
+        <p className="card-text bold">{driverObj?.phoneNumber}</p>
+        <Link href={`driver/edit/${driverObj?.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisDriver} className="m-2">DELETE</Button>
@@ -31,10 +34,11 @@ function DriverCard({ driverObj, onUpdate }) {
 
 DriverCard.propTypes = {
   driverObj: PropTypes.shape({
-    id: PropTypes.string,
+    firebaseKey: PropTypes.string,
     driver_name: PropTypes.string,
     image: PropTypes.string,
     phoneNumber: PropTypes.string,
+    ThreePlCompany: PropTypes.string,
     route: PropTypes.string,
     vehicle_type: PropTypes.string,
     warehouseId: PropTypes.string,

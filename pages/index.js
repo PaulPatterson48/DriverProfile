@@ -21,7 +21,7 @@ function Home() {
   return (
     <div className="text-center my-4">
       <h1>Warehouse</h1>
-      <Link href="driver/new" passHref>
+      <Link href="/driver/new" passHref>
         <Button>Add A Driver</Button>
       </Link>
       <div className="d-flex flex-wrap">
