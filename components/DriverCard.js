@@ -17,6 +17,14 @@ function DriverCard({ driverObj, onUpdate }) {
   return (
     <Card style={{ width: '18rem', margin: '10px ' }}>
       <Card.Img variant="top" src={driverObj.image} alt={driverObj.driver_name} style={{ height: '400px ' }} />
+      <Card.Body>
+        <Card.Title>{driverObj?.driver_name}</Card.Title>
+        <p className="card-text bold">{driverObj?.vehicle_type}</p>
+        <Link href={`driver/edit/${driverObj?.id}`} passHref>
+          <Button variant="info">EDIT</Button>
+        </Link>
+        <Button variant="danger" onClick={deleteThisDriver} className="m-2">DELETE</Button>
+      </Card.Body>
     </Card>
   );
 }
