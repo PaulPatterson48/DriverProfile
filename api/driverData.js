@@ -1,7 +1,7 @@
 import { clientCredentials } from '../utils/client';
 
 const endpoint = clientCredentials.databaseURL;
-
+// testing issue with authContext.js removed uid from code
 const getDrivers = (uid) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/driver.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
@@ -65,7 +65,7 @@ const getDriverByWarehouse = (firebaseKey) => new Promise((resolve, reject) => {
     headers: {
       'Content-Type': 'application/json',
     },
-  }).then((response) => response.jsone())
+  }).then((response) => response.json())
     .then((data) => resolve(Object.values(data)))
     .catch(reject);
 });

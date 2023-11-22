@@ -27,7 +27,7 @@ function ShowDrivers() {
         </Link>
 
         {drivers?.map((driver) => (
-          <DriverCard key={driver.id} driverObj={driver} onUpdate={getAllTheDrivers} />
+          <DriverCard key={driver.firebaseKey} driverObj={driver} onUpdate={getAllTheDrivers} />
         ))}
       </div>
     </div>

@@ -11,7 +11,7 @@ const initialState = {
   phoneNumber: '',
   route: '',
   vehicle_type: '',
-  '3PlCompany': '',
+  ThreePlCompany: '',
   warehouseId: '',
 
 };
@@ -105,8 +105,8 @@ function DriverForm({ driverObj }) {
         <Form.Control
           type="text"
           placeholder="Company Name"
-          name="3PLCompany"
-          value={formInput['3PlCompany']}
+          name="ThreePlCompany"
+          value={formInput.ThreePlCompany}
           onChange={handleChange}
         />
       </FloatingLabel>
@@ -145,7 +145,7 @@ DriverForm.propTypes = {
     driver_name: PropTypes.string,
     vehicle_type: PropTypes.string,
     route: PropTypes.string,
-    '3PlCompany': PropTypes.string,
+    ThreePlCompany: PropTypes.string,
     warehouseId: PropTypes.string,
     uid: PropTypes.string,
   }),
