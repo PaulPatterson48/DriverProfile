@@ -40,7 +40,7 @@ function DriverForm({ driverObj }) {
     } else {
       const payload = { ...formInput, uid: user.uid };
       createDriver(payload).then(({ name }) => {
-        const patchPayload = { id: name };
+        const patchPayload = { firebaseKey: name };
         updateDriver(patchPayload).then(() => {
           router.push('/drivers');
         });
@@ -82,10 +82,10 @@ function DriverForm({ driverObj }) {
           onChange={handleChange}
         >
           <option>Choose a vehicle</option>
-          <option value="boxtruck">Box Truck</option>
-          <option value="pickup">Pickup Truck</option>
-          <option value="warehouseDeliver">Company Truck</option>
-          <option value="cargo">Cargo Truck</option>
+          <option value="Box Truck">Box Truck</option>
+          <option value="Pickup Truck">Pickup Truck</option>
+          <option value="Warehouse Deliver">Company Truck</option>
+          <option value="cargo truck">Cargo Truck</option>
 
         </Form.Select>
       </FloatingLabel>

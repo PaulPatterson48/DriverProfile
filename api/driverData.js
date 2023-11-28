@@ -36,8 +36,8 @@ const createDriver = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getSingleDriver = (firebaeKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/driver/${firebaeKey}.json`, {
+const getSingleDriver = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/driver/${firebaseKey}.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
