@@ -1,0 +1,50 @@
+{
+  "-NkIOJgW8tPMd3_COJtk": {
+    "warehouseName": "Nashville",
+    "loadOutDoor": "01",
+    "vehicleNumber": "101",
+    "warehouseNumber": "001",
+    "firebaseKey": "-NkIOJgW8tPMd3_COJtk",
+    "uid": "D4jV2nFSg1UKKjIg0pWUh04Zibs1"
+  },
+  "-NkIOJgXF-k5455xFJUf": {
+    "warehouseName": "Chattanooga",
+    "loadOutDoor": "02",
+    "vehicleNumber": 102,
+    "warehouseNumber": "002",
+    "firebaseKey": "-NkIOJgXF-k5455xFJUf",
+    "uid": "D4jV2nFSg1UKKjIg0pWUh04Zibs1"
+  },
+  "-NkIOJgYuocmlHz-9x4N": {
+    "warehouseName": "Knoxville",
+    "loadOutDoor": "03",
+    "vehicleNumber": 103,
+    "warehouseNumber": "003",
+    "firebaseKey": "-NkIOJgYuocmlHz-9x4N",
+    "uid": "D4jV2nFSg1UKKjIg0pWUh04Zibs1"
+  },
+  "-NkIOJgZ_s9CXv9hGzlK": {
+    "warehouseName": "Atlanta",
+    "loadOutDoor": "04",
+    "vehicleNumber": 104,
+    "warehouseNumber": "004",
+    "firebaseKey": "-NkIOJgZ_s9CXv9hGzlK",
+    "uid": "D4jV2nFSg1UKKjIg0pWUh04Zibs1"
+  },
+  "-NkIOJg_qqRdu_UJimPh": {
+    "warehouseName": "05",
+    "loadOutDoor": "Quennell",
+    "vehicleNumber": 105,
+    "warehouseNumber": "005",
+    "firebaseKey": "-NkIOJg_qqRdu_UJimPh",
+    "uid": "D4jV2nFSg1UKKjIg0pWUh04Zibs1"
+  },
+  "-NkIOJgaRdOMlpwU2YDP": {
+    "warehouseName": "Fremont",
+    "loadOutDoor": "06",
+    "vehicleNumber": 106,
+    "warehouseNumber": "006",
+    "firebaseKey": "-NkIOJgaRdOMlpwU2YDP",
+    "uid": "D4jV2nFSg1UKKjIg0pWUh04Zibs1"
+  }
+}

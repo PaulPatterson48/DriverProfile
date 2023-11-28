@@ -7,14 +7,14 @@ export default function ViewDrivers() {
   const [driverDetails, setDriverDetails] = useState({});
   const router = useRouter();
 
-  const { id } = router.query;
+  const { firebaseKey } = router.query;
 
   useEffect(() => {
-    getSingleDriver(id).then(setDriverDetails);
-  }, [id]);
+    getSingleDriver(firebaseKey).then(setDriverDetails);
+  }, [firebaseKey]);
 
   return (
-    <div className="mt-5 d-flec flex-wrap">
+    <div className="mt-5 d-flex flex-wrap">
       <div className="d-flex flex-column">
         <img src={driverDetails.image} alt={driverDetails.driver_name} style={{ width: '300px' }} />
       </div>

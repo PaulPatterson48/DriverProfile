@@ -7,11 +7,13 @@ export default function EditDriver() {
   const [editItem, setEditItem] = useState({});
   const router = useRouter();
 
-  const { id } = router.query;
+  const { firebaseKey } = router.query;
 
+  // Make a call to the API to get the driver data
   useEffect(() => {
-    getSingleDriver(id).then(setEditItem);
-  }, [id]);
+    getSingleDriver(firebaseKey).then(setEditItem);
+  }, [firebaseKey]);
 
+  // Pass driverObject to the form
   return (<DriverForm driverObj={editItem} />);
 }

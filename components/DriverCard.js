@@ -9,7 +9,7 @@ function DriverCard({ driverObj, onUpdate }) {
   // Need to be able to remove the driver and have the view render
   // Pass the function from the parent that gets the Driver
   const deleteThisDriver = () => {
-    if (window.confirm(`Delete ${driverObj}.name}?`)) {
+    if (window.confirm(`Delete ${driverObj.driver_name}?`)) {
       deleteDriver(driverObj.firebaseKey).then(() => onUpdate());
     }
   };
@@ -19,9 +19,8 @@ function DriverCard({ driverObj, onUpdate }) {
       <Card.Img variant="top" src={driverObj.image} alt={driverObj.driver_name} style={{ height: '400px ' }} />
       <Card.Body>
         <Card.Title>{driverObj?.driver_name}</Card.Title>
-        <p className="card-text bold">{driverObj?.vehicle_type}</p>
-        <p className="card-text bold">{driverObj?.route}</p>
-        <p className="card-text bold">{driverObj?.ThreePlCompany}</p>
+        <p className="card-text bold">{<span>Route<br /></span> && driverObj?.route}</p>
+        <p className="card-text bold">{<span>3PlCompany</span> && driverObj?.ThreePlCompany}</p>
         <p className="card-text bold">{driverObj?.phoneNumber}</p>
         <Link href={`driver/edit/${driverObj?.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
