@@ -20,7 +20,7 @@ function Home() {
 
   return (
     <div className="text-center my-4">
-      <h1>Warehouse {drivers?.warehouse_id}</h1>
+      <h1>Drivers </h1>
       <Link href="/driver/new" passHref>
         <Button>Add A Driver</Button>
       </Link>
