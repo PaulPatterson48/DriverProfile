@@ -14,8 +14,8 @@ function WarehouseCard({ warehouseObj, onUpdate }) {
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
-        <Card.Title>{warehouseObj.warehouseName}</Card.Title>
-        <Link href={`/warehouse/edit/${warehouseObj.firebaseKey}`} passHref>
+        <Card.Title>{warehouseObj?.warehouseName}</Card.Title>
+        <Link href={`/warehouse/edit/${warehouseObj?.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">View</Button>
         </Link>
         <Link href={`/warehouse/edit/${warehouseObj.firebaseKey}`} passHref>

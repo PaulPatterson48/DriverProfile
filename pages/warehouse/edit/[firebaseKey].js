@@ -1,27 +1,21 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import { viewWarehouseDetails } from '../../../api/mergedData';
-import WarehouseCard from '../../../components/WarehouseCard';
+import { getSingleWarehouse } from '../../../api/warehouseData';
+import WarehouseForm from '../../../components/forms/WarehouseForm';
 
-export default function ViewWarehouse() {
-  const [warehouseDetails, setWarehouseDetails] = useState({});
+export default function EditWarehouse() {
+  const [editItem, setEditItem] = useState({});
   const router = useRouter();
 
   const { firebaseKey } = router.query;
 
-  const getWarehouseDetails = () => {
-    viewWarehouseDetails(firebaseKey).then(setWarehouseDetails);
-  };
-
   useEffect(() => {
-    getWarehouseDetails();
+    getSingleWarehouse(firebaseKey).then(setEditItem);
   }, [firebaseKey]);
 
   return (
-    <div>{warehouseDetails.driver?.map((warehouse) => (
-      <WarehouseCard warehouseObj={warehouse.firebaseKey} onUpdate={getWarehouseDetails} />
-    ))}
-    </div>
+    <WarehouseForm warehouseObj={editItem} />
+
   );
 }

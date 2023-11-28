@@ -14,14 +14,14 @@ const initialState = {
   vehicleNumber: '',
 };
 
-function WarehouseForm({ obj }) {
+function WarehouseForm({ warehouseObj }) {
   const [formInput, setFormInput] = useState(initialState);
   const router = useRouter();
   const { user } = useAuth();
 
   useEffect(() => {
-    if (obj.firebaseKey) setFormInput(obj);
-  }, [obj, user]);
+    if (warehouseObj.firebaseKey) setFormInput(warehouseObj);
+  }, [warehouseObj, user]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,14 +33,14 @@ function WarehouseForm({ obj }) {
 
   const handleSubmit = (e) => {
     e.preventdefault();
-    if (obj.firebaseKey) {
-      updateWarehouse(formInput).then(() => router.push(`/warehouse/${obj.firebaseKey}`));
+    if (warehouseObj.firebaseKey) {
+      updateWarehouse(formInput).then(() => router.push(`/warehouse/${warehouseObj.firebaseKey}`));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createWarehouse(payload).then(({ name }) => {
-        const patchPayload = { firebasekey: name };
+        const patchPayload = { firebaseKey: name };
         updateWarehouse(patchPayload).then(() => {
-          router.push('/warehouse');
+          router.push('/warehouses');
         });
       });
     }
@@ -48,7 +48,7 @@ function WarehouseForm({ obj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Warehouse</h2>
+      <h2 className="text-white mt-5">{warehouseObj.firebaseKey ? 'Update' : 'Create'} Warehouse</h2>
 
       <FloatingLabel controlId="floatingInput1" label="warehoueName" className="mb-3">
         <Form.Control
@@ -94,14 +94,14 @@ function WarehouseForm({ obj }) {
         />
       </FloatingLabel>
 
-      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Warehouse</Button>
+      <Button type="submit">{warehouseObj.firebaseKey ? 'Update' : 'Create'} Warehouse</Button>
 
     </Form>
   );
 }
 
 WarehouseForm.propTypes = {
-  obj: PropTypes.shape({
+  warehouseObj: PropTypes.shape({
     warehouseName: PropTypes.string,
     warehouseNumber: PropTypes.number,
     loadOutdoor: PropTypes.number,
@@ -112,7 +112,7 @@ WarehouseForm.propTypes = {
 };
 
 WarehouseForm.defaultProps = {
-  obj: initialState,
+  warehouseObj: initialState,
 };
 
 export default WarehouseForm;

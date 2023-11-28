@@ -32,8 +32,8 @@
     "uid": "D4jV2nFSg1UKKjIg0pWUh04Zibs1"
   },
   "-NkIOJg_qqRdu_UJimPh": {
-    "warehouseName": "05",
-    "loadOutDoor": "Quennell",
+    "warehouseName": "Quennell",
+    "loadOutDoor": "05",
     "vehicleNumber": 105,
     "warehouseNumber": "005",
     "firebaseKey": "-NkIOJg_qqRdu_UJimPh",

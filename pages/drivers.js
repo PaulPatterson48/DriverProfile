@@ -25,10 +25,16 @@ function ShowDrivers() {
         <Link href="/driver/new" passHref>
           <Button>Add A Driver</Button>
         </Link>
+        <div className="d-flex flex-wrap">
+          {drivers?.map((driver) => (
+            <DriverCard
+              key={driver.firebaseKey}
+              driverObj={driver}
+              onUpdate={getAllTheDrivers}
+            />
+          ))}
+        </div>
 
-        {drivers?.map((driver) => (
-          <DriverCard key={driver.firebaseKey} driverObj={driver} onUpdate={getAllTheDrivers} />
-        ))}
       </div>
     </div>
   );
