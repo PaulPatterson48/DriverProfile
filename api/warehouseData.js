@@ -42,7 +42,7 @@ const getSingleWarehouse = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 const deleteSingleWarehouse = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/wareshouse/${firebaseKey}.json`, {
+  fetch(`${endpoint}/warehouse/${firebaseKey}.json`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ const updateWarehouse = (payload) => new Promise((resolve, reject) => {
 });
 
 const getDriverWarehouse = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/driver.json?orderBy="warehouseId"&equalTo="${firebaseKey}`, {
+  fetch(`${endpoint}/driver.json?orderBy="warehouseId"&equalTo="${firebaseKey}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

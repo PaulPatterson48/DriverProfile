@@ -10,7 +10,7 @@ import { createWarehouse, updateWarehouse } from '../../api/warehouseData';
 const initialState = {
   warehouseName: '',
   warehouseNumber: '',
-  loadOutdoor: '',
+  loadOutDoor: '',
   vehicleNumber: '',
 };
 
@@ -32,7 +32,7 @@ function WarehouseForm({ warehouseObj }) {
   };
 
   const handleSubmit = (e) => {
-    e.preventdefault();
+    e.preventDefault();
     if (warehouseObj.firebaseKey) {
       updateWarehouse(formInput).then(() => router.push(`/warehouse/${warehouseObj.firebaseKey}`));
     } else {
@@ -57,7 +57,7 @@ function WarehouseForm({ warehouseObj }) {
           name="warehouseName"
           value={formInput.warehouseName}
           onChange={handleChange}
-          required
+
         />
       </FloatingLabel>
 
@@ -66,9 +66,9 @@ function WarehouseForm({ warehouseObj }) {
           type="text"
           placeholder="Enter Warehouse Number"
           name="warehouseNumber"
-          value={formInput.warehoueNumber}
+          value={formInput.warehouseNumber}
           onChange={handleChange}
-          required
+
         />
       </FloatingLabel>
 
@@ -76,8 +76,8 @@ function WarehouseForm({ warehouseObj }) {
         <Form.Control
           type="text"
           placeholder="Enter Load Out Door"
-          name="loadOutdoor"
-          value={formInput.loadOutdoor}
+          name="loadOutDoor"
+          value={formInput.loadOutDoor}
           onChange={handleChange}
           required
         />
@@ -85,7 +85,7 @@ function WarehouseForm({ warehouseObj }) {
 
       <FloatingLabel controlId="floatingInput4" label="vehicleNumber" className="mb-3">
         <Form.Control
-          type="text"
+          type="number"
           placeholder="Enter Vehicle Number"
           name="vehicleNumber"
           value={formInput.vehicleNumber}
@@ -103,9 +103,9 @@ function WarehouseForm({ warehouseObj }) {
 WarehouseForm.propTypes = {
   warehouseObj: PropTypes.shape({
     warehouseName: PropTypes.string,
-    warehouseNumber: PropTypes.number,
-    loadOutdoor: PropTypes.number,
-    vehicleNumber: PropTypes.string,
+    warehouseNumber: PropTypes.string,
+    loadOutDoor: PropTypes.string,
+    vehicleNumber: PropTypes.number,
     firebaseKey: PropTypes.string,
     uid: PropTypes.string,
   }),
