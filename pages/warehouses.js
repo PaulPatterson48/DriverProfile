@@ -25,13 +25,15 @@ function ShowWarehouse() {
         <Link href="/warehouse/new" passHref>
           <Button>Add A Warehouse</Button>
         </Link>
-        {warehouses?.map((warehouse) => (
-          <WarehouseCard
-            key={warehouse.firebaseKey}
-            warehouseObj={warehouse}
-            onUpdate={getAllTheWarehouses}
-          />
-        ))}
+        <div className="d-flex flex-wrap">
+          {warehouses?.map((warehouse) => (
+            <WarehouseCard
+              key={warehouse.firebaseKey}
+              warehouseObj={warehouse}
+              onUpdate={getAllTheWarehouses}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -11,12 +11,11 @@ const viewDriverDetails = (driverFirebaseKey) => new Promise((resolve, reject) =
     }).catch((error) => reject(error));
 });
 
-const viewWarehouseDetails = (warehouseFirebaseKey) => new Promise((resolve, reject) => {
-  Promise.all([getSingleWarehouse(warehouseFirebaseKey), getDriverWarehouse(warehouseFirebaseKey)])
-    .then(([warehouseObject, warehouseDriverArray]) => {
-      resolve({ ...warehouseObject, driver: warehouseDriverArray });
-    }).catch((error) => reject(error));
-});
+const viewWarehouseDetails = async (firebaseKey) => {
+  const warehouse = await getSingleWarehouse(firebaseKey);
+  const drivers = await getDriverWarehouse(warehouse.firebaseKey);
+  return { ...warehouse, drivers };
+};
 
 const deleteWarehouseDrivers = (firebaseKey) => new Promise((resolve, reject) => {
   getDriverWarehouse(firebaseKey).then((warehouseDriverArray) => {
@@ -27,14 +26,6 @@ const deleteWarehouseDrivers = (firebaseKey) => new Promise((resolve, reject) =>
     });
   }).catch(reject);
 });
-// Get Drivers not related to a Warehouse
-// const getDriversNotInTheWarehouse = (uid) => {
-// const allDrivers = await getDriver(uid);
-
-// const driverPromise = await
-// const drivers = await Promise.all(driverPromise)
-
-// }
 
 export {
   viewDriverDetails,

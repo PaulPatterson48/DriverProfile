@@ -15,7 +15,9 @@ export default function EditWarehouse() {
   }, [firebaseKey]);
 
   return (
-    <WarehouseForm warehouseObj={editItem} />
+    <div className="d-flex flex-column">
+      <WarehouseForm warehouseObj={editItem} />
+    </div>
 
   );
 }

@@ -19,9 +19,8 @@ export default function ViewWarehouse() {
   }, [firebaseKey]);
 
   return (
-    <div>{warehouseDetails.drivers?.map((warehouse) => (
-      <WarehouseCard warehouseObj={warehouse.firebaseKey} onUpdate={getWarehouseDetails} />
-    ))}
+    <div className="d-flex flex-column">
+      <WarehouseCard warehouseObj={warehouseDetails} onUpdate={getWarehouseDetails} />
 
     </div>
   );

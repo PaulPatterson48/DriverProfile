@@ -15,6 +15,9 @@ function WarehouseCard({ warehouseObj, onUpdate }) {
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
         <Card.Title>{warehouseObj?.warehouseName}</Card.Title>
+        <p className="card-text bold">WarehouseNumber: {<span>WarehouseNumber<br /></span> && warehouseObj?.warehouseNumber}</p>
+        <p className="card-text bold">LoadOutDoor: {<span>LoadOutDoor<br /></span> && warehouseObj?.loadOutDoor}</p>
+        <p className="card-text bold">VehicleNumber: {<span>VehicleNumber<br /></span> && warehouseObj?.vehicleNumber}</p>
         <Link href={`/warehouse/edit/${warehouseObj?.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">View</Button>
         </Link>
@@ -31,7 +34,11 @@ function WarehouseCard({ warehouseObj, onUpdate }) {
 WarehouseCard.propTypes = {
   warehouseObj: PropTypes.shape({
     warehouseName: PropTypes.string,
+    warehouseNumber: PropTypes.number,
+    loadOutDoor: PropTypes.number,
+    vehicleNumber: PropTypes.number,
     firebaseKey: PropTypes.string,
+    uid: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
