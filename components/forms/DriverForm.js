@@ -130,24 +130,13 @@ function DriverForm({ driverObj }) {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingInput6" label="Warehouse Number" className="mb-3">
-        <Form.Control
-          type="text"
-          placeholder="Warehouse Number"
-          name="warehouseId"
-          value={formInput.warehouseId}
-          onChange={handleChange}
-          required
-        />
-      </FloatingLabel>
-
       <FloatingLabel controlId="floatingSelect" label="Warehouse">
         <Form.Select
           aria-label="Warehouse"
           name="warehouseId"
           onChange={handleChange}
           className="mb-3"
-          value={driverObj.warehouseId}
+          value={formInput.warehouseId}
           required
         >
           <option value="">Select a Warehouse</option>
@@ -157,7 +146,7 @@ function DriverForm({ driverObj }) {
                   key={warehouse.firebaseKey}
                   value={warehouse.firebaseKey}
                 >
-                  {warehouse.warhouseName}
+                  {warehouse.warehouseName}
                 </option>
               ))
             }
