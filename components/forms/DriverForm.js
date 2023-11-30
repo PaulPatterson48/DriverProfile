@@ -167,6 +167,7 @@ DriverForm.propTypes = {
     route: PropTypes.string,
     ThreePlCompany: PropTypes.string,
     warehouseId: PropTypes.string,
+    warehouseName: PropTypes.string,
     uid: PropTypes.string,
   }),
 };

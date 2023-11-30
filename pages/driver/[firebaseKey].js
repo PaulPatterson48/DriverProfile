@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { getSingleDriver } from '../../api/driverData';
+import { viewDriverDetails } from '../../api/mergedData';
 
 export default function ViewDrivers() {
   const [driverDetails, setDriverDetails] = useState({});
@@ -10,7 +10,7 @@ export default function ViewDrivers() {
   const { firebaseKey } = router.query;
 
   useEffect(() => {
-    getSingleDriver(firebaseKey).then(setDriverDetails);
+    viewDriverDetails(firebaseKey).then(setDriverDetails);
   }, [firebaseKey]);
 
   return (
@@ -20,7 +20,12 @@ export default function ViewDrivers() {
       </div>
 
       <div>
-        <h5> {driverDetails.driver_name || ''} <p>{driverDetails.vehicle_type || ''}</p></h5>
+        <h5> {driverDetails.driver_name || ''}
+          <p>Driver Phone: {driverDetails.phoneNumber || ''}</p>
+          <p>Vehicle: {driverDetails.vehicle_type || ''}</p>
+          <p>Warehouse: {driverDetails.warehouseObject?.warehouseName || ''}</p>
+          <p>LoadOutDoor: {driverDetails.warehouseObject?.loadOutDoor || ''}</p>
+        </h5>
       </div>
     </div>
   );
