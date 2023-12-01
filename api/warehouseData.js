@@ -77,7 +77,8 @@ const getDriverWarehouse = (firebaseKey) => new Promise((resolve, reject) => {
       } else {
         resolve([]);
       }
-    }).catch(reject);
+    })
+    .catch(reject);
 });
 
 export {

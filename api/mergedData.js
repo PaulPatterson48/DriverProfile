@@ -2,17 +2,15 @@ import { getDriverWarehouse, getSingleWarehouse, deleteSingleWarehouse } from '.
 import { getSingleDriver, deleteDriver } from './driverData';
 
 const viewDriverDetails = (driverFirebaseKey) => new Promise((resolve, reject) => {
-  getSingleDriver(driverFirebaseKey)
-    .then((driverObject) => {
-      getSingleWarehouse(driverObject.warehouseId)
-        .then((warehouseObject) => {
-          resolve({ warehouseObject, ...driverObject });
-        });
-    }).catch((error) => reject(error));
+  getSingleDriver(driverFirebaseKey).then((driverObject) => {
+    getSingleWarehouse(driverObject.warehouseId)
+      .then((warehouseObject) => {
+        resolve({ ...driverObject, warehouseObject });
+      });
+  }).catch((error) => reject(error));
 });
-
-const viewWarehouseDetails = async (firebaseKey) => {
-  const warehouse = await getSingleWarehouse(firebaseKey);
+const viewWarehouseDetails = async (warehouseFirebaseKey) => {
+  const warehouse = await getSingleWarehouse(warehouseFirebaseKey);
   const drivers = await getDriverWarehouse(warehouse.firebaseKey);
   return { ...warehouse, drivers };
 };
