@@ -15,9 +15,11 @@ export default function EditWarehouse() {
   }, [firebaseKey]);
 
   return (
-    <div className="d-flex flex-column">
-      <WarehouseForm warehouseObj={editItem} />
-    </div>
+    <section className="driverProfile">
+      <div className="d-flex flex-column justify-content-center">
+        <WarehouseForm warehouseObj={editItem} />
+      </div>
+    </section>
 
   );
 }
