@@ -60,7 +60,7 @@ const updateDriver = (payload) => new Promise((resolve, reject) => {
 });
 
 const getDriverByWarehouse = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/driver.json?orderBy="warehouse_id"&equalTo="${firebaseKey}"`, {
+  fetch(`${endpoint}/driver.json?orderBy="warehouseId"&equalTo="${firebaseKey}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

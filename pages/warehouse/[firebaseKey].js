@@ -2,7 +2,7 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { viewWarehouseDetails } from '../../api/mergedData';
-import WarehouseCard from '../../components/WarehouseCard';
+import DriverCard from '../../components/DriverCard';
 
 export default function ViewWarehouse() {
   const [warehouseDetails, setWarehouseDetails] = useState({});
@@ -19,8 +19,10 @@ export default function ViewWarehouse() {
   }, [firebaseKey]);
 
   return (
-    <div className="d-flex flex-column">
-      <WarehouseCard warehouseObj={warehouseDetails} onUpdate={getWarehouseDetails} />
+
+    <div className="d-flex flex-wrap"> {warehouseDetails.drivers?.map((warehouse) => (
+      <DriverCard key={warehouse.firebaseKey} driverObj={warehouse} onUpdate={getWarehouseDetails} />
+    ))}
 
     </div>
   );

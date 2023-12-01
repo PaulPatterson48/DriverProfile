@@ -18,7 +18,7 @@ function WarehouseCard({ warehouseObj, onUpdate }) {
         <p className="card-text bold">WarehouseNumber: {<span>WarehouseNumber<br /></span> && warehouseObj?.warehouseNumber}</p>
         <p className="card-text bold">LoadOutDoor: {<span>LoadOutDoor<br /></span> && warehouseObj?.loadOutDoor}</p>
         <p className="card-text bold">VehicleNumber: {<span>VehicleNumber<br /></span> && warehouseObj?.vehicleNumber}</p>
-        <Link href={`/warehouse/${warehouseObj?.firebaseKey}`} passHref>
+        <Link href={`/warehouse/${warehouseObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">View</Button>
         </Link>
         <Link href={`/warehouse/edit/${warehouseObj.firebaseKey}`} passHref>
