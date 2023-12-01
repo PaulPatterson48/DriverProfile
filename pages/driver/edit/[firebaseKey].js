@@ -15,5 +15,5 @@ export default function EditDriver() {
   }, [firebaseKey]);
 
   // Pass driverObject to the form
-  return (<DriverForm driverObj={editItem} />);
+  return (<section className="driverProfile"><DriverForm driverObj={editItem} /></section>);
 }

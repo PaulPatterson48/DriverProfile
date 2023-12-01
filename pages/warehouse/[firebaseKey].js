@@ -19,11 +19,16 @@ export default function ViewWarehouse() {
   }, [firebaseKey]);
 
   return (
+    <section className="driverProfile">
+      <div className="d-flex flex-wrap justify-content-center"> {warehouseDetails.drivers?.map((warehouse) => (
+        <DriverCard
+          key={warehouse.firebaseKey}
+          driverObj={warehouse}
+          onUpdate={getWarehouseDetails}
+        />
+      ))}
+      </div>
+    </section>
 
-    <div className="d-flex flex-wrap"> {warehouseDetails.drivers?.map((warehouse) => (
-      <DriverCard key={warehouse.firebaseKey} driverObj={warehouse} onUpdate={getWarehouseDetails} />
-    ))}
-
-    </div>
   );
 }

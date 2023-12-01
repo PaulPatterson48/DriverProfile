@@ -20,22 +20,25 @@ function ShowWarehouse() {
   }, []);
 
   return (
-    <div className="d-flex flex-wrap">
-      <div className="text-center my-4">
-        <Link href="/warehouse/new" passHref>
-          <Button>Add A Warehouse</Button>
-        </Link>
-        <div className="d-flex flex-wrap">
-          {warehouses?.map((warehouse) => (
-            <WarehouseCard
-              key={warehouse.firebaseKey}
-              warehouseObj={warehouse}
-              onUpdate={getAllTheWarehouses}
-            />
-          ))}
+    <section className="driverProfile">
+      <div className="d-flex flex-wrap">
+        <div className="text-center my-4">
+          <Link href="/warehouse/new" passHref>
+            <Button>Add A Warehouse</Button>
+          </Link>
+          <div className="d-flex flex-wrap">
+            {warehouses?.map((warehouse) => (
+              <WarehouseCard
+                key={warehouse.firebaseKey}
+                warehouseObj={warehouse}
+                onUpdate={getAllTheWarehouses}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
   );
 }
 

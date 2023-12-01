@@ -18,5 +18,12 @@ a {
 }
 
 body {
-  background-color: #88effd;
+  background-color: #dae8ea;
+}
+
+.driverProfile {
+  display: flex;
+  height: 100vh;
+  background-image: url('https://www.whichwarehouse.com/blog/wp-content/uploads/2015/12/Modern-Industrial-Warehouse-External-view.jpg');
+  background-size: cover;
 }

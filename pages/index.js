@@ -19,17 +19,19 @@ function Home() {
   }, []);
 
   return (
-    <div className="text-center my-4">
-      <h1>Drivers </h1>
-      <Link href="/driver/new" passHref>
-        <Button>Add A Driver</Button>
-      </Link>
-      <div className="d-flex flex-wrap">
-        {drivers?.map((driver) => (
-          <DriverCard key={driver.firebasekey} driverObj={driver} onUpdate={getAllTheDrivers} />
-        ))}
+    <section className="driverProfile">
+      <div className="text-center my-4">
+        <Link href="/driver/new" passHref>
+          <Button>Add A Driver</Button>
+        </Link>
+        <div className="d-flex flex-wrap">
+          {drivers?.map((driver) => (
+            <DriverCard key={driver.firebasekey} driverObj={driver} onUpdate={getAllTheDrivers} />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
+
   );
 }
 
