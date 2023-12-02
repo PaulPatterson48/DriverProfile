@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card } from 'react-bootstrap';
 import Link from 'next/link';
-import { deleteSingleWarehouse } from '../api/warehouseData';
+import { deleteWarehouseDrivers } from '../api/mergedData';
 
 function WarehouseCard({ warehouseObj, onUpdate }) {
   const deleteThisWarehouse = () => {
     if (window.confirm(`Delete ${warehouseObj.warehouseName}?`)) {
-      deleteSingleWarehouse(warehouseObj.firebaseKey).then(() => onUpdate());
+      deleteWarehouseDrivers(warehouseObj.firebaseKey).then(() => onUpdate());
     }
   };
 
