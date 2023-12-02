@@ -34,9 +34,9 @@ function WarehouseCard({ warehouseObj, onUpdate }) {
 WarehouseCard.propTypes = {
   warehouseObj: PropTypes.shape({
     warehouseName: PropTypes.string,
-    warehouseNumber: PropTypes.number,
-    loadOutDoor: PropTypes.number,
-    vehicleNumber: PropTypes.number,
+    warehouseNumber: PropTypes.string,
+    loadOutDoor: PropTypes.string,
+    vehicleNumber: PropTypes.string,
     firebaseKey: PropTypes.string,
     uid: PropTypes.string,
   }).isRequired,
