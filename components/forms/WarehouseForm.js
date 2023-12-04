@@ -53,7 +53,7 @@ function WarehouseForm({ warehouseObj }) {
       <FloatingLabel controlId="floatingInput1" label="warehoueName" className="mb-3">
         <Form.Control
           type="text"
-          placeholder="Enter Warehouse Name"
+          placeholder="Name"
           name="warehouseName"
           value={formInput.warehouseName}
           onChange={handleChange}
@@ -64,7 +64,7 @@ function WarehouseForm({ warehouseObj }) {
       <FloatingLabel controlId="floatingInput2" label="warehouseNumber" className="mb-3">
         <Form.Control
           type="text"
-          placeholder="Enter Warehouse Number"
+          placeholder="Number"
           name="warehouseNumber"
           value={formInput.warehouseNumber}
           onChange={handleChange}
@@ -75,7 +75,7 @@ function WarehouseForm({ warehouseObj }) {
       <FloatingLabel controlId="floatingInput3" label="loadOutdoor" className="mb-3">
         <Form.Control
           type="text"
-          placeholder="Enter Load Out Door"
+          placeholder="Load Out Door"
           name="loadOutDoor"
           value={formInput.loadOutDoor}
           onChange={handleChange}
@@ -86,7 +86,7 @@ function WarehouseForm({ warehouseObj }) {
       <FloatingLabel controlId="floatingInput4" label="vehicleNumber" className="mb-3">
         <Form.Control
           type="number"
-          placeholder="Enter Vehicle Number"
+          placeholder="Vehicle Number"
           name="vehicleNumber"
           value={formInput.vehicleNumber}
           onChange={handleChange}

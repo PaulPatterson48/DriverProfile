@@ -26,7 +26,6 @@ const deleteWarehouseDrivers = (firebaseKey) => new Promise((resolve, reject) =>
   getDriverWarehouse(firebaseKey).then((warehouseDriverArray) => {
     console.warn(`The value of driver warehouse is ${warehouseDriverArray}`);
     const deleteDriverPromises = warehouseDriverArray.map((driver) => deleteDriver(driver.firebaseKey));
-    console.warn(warehouseDriverArray);
     Promise.all(deleteDriverPromises).then(() => {
       deleteSingleWarehouse(firebaseKey).then(resolve);
     });
