@@ -21,7 +21,7 @@ export default function ViewDrivers() {
         </div>
         <div>
           <h5> {driverDetails.driver_name || ''}
-            <p>Driver Phone: {driverDetails.phoneNumber || ''}</p>
+            <p>Phone: {driverDetails.phoneNumber || ''}</p>
             <p>Vehicle: {driverDetails.vehicle_type || ''}</p>
             <p>Warehouse: {driverDetails.warehouseObject?.warehouseName || ''}</p>
             <p>LoadOutDoor: {driverDetails.warehouseObject?.loadOutDoor || ''}</p>
