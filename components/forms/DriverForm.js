@@ -19,7 +19,7 @@ const initialState = {
 
 };
 // This function takesa piece of information about a driver (driverObj) as input
-// The useState creates a couple of storage spaces in the computer's memory (using 'useState'). One is for the details of the drivers's form ('formInput'), and the other is for a list of warehouses
+// The useState creates a couple of storage spaces in the computer's memory (using 'useState'). One is for the details of the drivers's form ('formInput')the initialState is set to empty strings, and the other is for a list of warehouses
 function DriverForm({ driverObj }) {
   const [formInput, setFormInput] = useState(initialState);
   const [warehouses, setWarehouses] = useState([]);
@@ -39,8 +39,8 @@ function DriverForm({ driverObj }) {
   // previous state can use the previous value of the state while using the set state method.
   // handleChange handle changes that the users made in the input is called when the user toggles a task or presses save
   // the spread operator provides a concise way to pass props, copy objects, and manage the state. Allow you to expand arrays and objects into multiple elements.
-  const handleChange = (e) => { // event of the input
-    const { name, value } = e.target;
+  const handleChange = (e) => { // event of the input: e.taraget refers to the target element that triggered the
+    const { name, value } = e.target; // name is the name attribute of the form input element the is triggered by the change value is the new value entered or selected by the user in the form input uses destructuring assignment to extract the name and the value
     setFormInput((prevState) => ({ // setFormInput is a function provided by the useState hook to update the state of the formInput
       ...prevState, // prevState spreads the properties of the previous state object, creating a shallow copy
       [name]: value, // name value dynamically updates the property specified by the name variable with tthe new value.
