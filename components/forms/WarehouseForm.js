@@ -5,7 +5,7 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
-import { createWarehouse, updateWarehouse } from '../../api/warehouseData';
+import { getWarehouse, createWarehouse, updateWarehouse } from '../../api/warehouseData';
 
 const initialState = {
   warehouseName: '',
@@ -20,7 +20,8 @@ function WarehouseForm({ warehouseObj }) {
   const { user } = useAuth();
 
   useEffect(() => {
-    if (warehouseObj.firebaseKey) setFormInput(warehouseObj);
+    getWarehouse(user.uid).then(setFormInput);
+    if (warehouseObj?.firebaseKey) setFormInput(warehouseObj);
   }, [warehouseObj, user]);
 
   const handleChange = (e) => {
@@ -48,7 +49,7 @@ function WarehouseForm({ warehouseObj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{warehouseObj.firebaseKey ? 'Update' : 'Create'} Warehouse</h2>
+      <h2 className="text-white mt-5">{warehouseObj?.firebaseKey ? 'Update' : 'Create'} Warehouse</h2>
 
       <FloatingLabel controlId="floatingInput1" label="warehoueName" className="mb-3">
         <Form.Control
@@ -85,7 +86,7 @@ function WarehouseForm({ warehouseObj }) {
 
       <FloatingLabel controlId="floatingInput4" label="vehicleNumber" className="mb-3">
         <Form.Control
-          type="number"
+          type="text"
           placeholder="Vehicle Number"
           name="vehicleNumber"
           value={formInput.vehicleNumber}
@@ -94,7 +95,7 @@ function WarehouseForm({ warehouseObj }) {
         />
       </FloatingLabel>
 
-      <Button type="submit">{warehouseObj.firebaseKey ? 'Update' : 'Create'} Warehouse</Button>
+      <Button type="submit">{warehouseObj?.firebaseKey ? 'Update' : 'Create'} Warehouse</Button>
 
     </Form>
   );
@@ -105,7 +106,7 @@ WarehouseForm.propTypes = {
     warehouseName: PropTypes.string,
     warehouseNumber: PropTypes.string,
     loadOutDoor: PropTypes.string,
-    vehicleNumber: PropTypes.number,
+    vehicleNumber: PropTypes.string,
     firebaseKey: PropTypes.string,
     uid: PropTypes.string,
   }),
