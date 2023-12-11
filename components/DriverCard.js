@@ -25,7 +25,7 @@ function DriverCard({ driverObj, onUpdate }) {
         <Link href={`/driver/${driverObj?.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
-        <Link href={`/driver/edit/${driverObj.firebaseKey}`} passHref>
+        <Link href={`/driver/edit/${driverObj?.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisDriver} className="m-2">DELETE</Button>

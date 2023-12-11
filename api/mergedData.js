@@ -21,6 +21,12 @@ const viewWarehouseDetails = (warehouseFirebaseKey) => new Promise((resolve, rej
     }).catch((error) => reject(error));
 });
 
+const viewSingleWarehouse = async (firebaseKey) => {
+  const warehouse = await getSingleWarehouse(firebaseKey);
+  const drivers = await getDriverWarehouse(warehouse.firebaseKey);
+  return { ...warehouse, drivers };
+};
+
 // This function is for when we want to remove a whole warehouse and all it's drivers. It first finds all the drivers in that warehouse, then goes through each driver and removes them. After that, it deletes the warehouse itself. It's like cleaning up everythnig related to that warehouse.
 const deleteWarehouseDrivers = (firebaseKey) => new Promise((resolve, reject) => {
   getDriverWarehouse(firebaseKey).then((warehouseDriverArray) => {
@@ -36,4 +42,5 @@ export {
   viewDriverDetails,
   viewWarehouseDetails,
   deleteWarehouseDrivers,
+  viewSingleWarehouse,
 };
