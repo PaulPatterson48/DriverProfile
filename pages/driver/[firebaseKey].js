@@ -29,6 +29,5 @@ export default function ViewDrivers() {
         </div>
       </div>
     </section>
-
   );
 }
