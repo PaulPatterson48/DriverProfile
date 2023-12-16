@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
@@ -16,15 +17,14 @@ function DriverCard({ driverObj, onUpdate }) {
 
   return (
     <Card style={{ width: '18rem', margin: '10px ' }}>
-      <Card.Img variant="top" src={driverObj?.image} alt={driverObj?.driver_name} style={{ height: '400px ' }} />
+      <Link href={`/driver/${driverObj?.firebaseKey}`} passHref>
+        <img src={driverObj?.image} alt={driverObj?.driver_name} style={{ height: '250px ' }} />
+      </Link>
       <Card.Body>
         <Card.Title>{driverObj?.driver_name}</Card.Title>
         <p className="card-text bold row justify-content-left">Route: {<span>Route<br /></span> && driverObj?.route}</p>
         <p className="card-text bold row justify-content-left">3PL Company: {<span>3PlCompany</span> && driverObj?.ThreePlCompany}</p>
         <p className="card-text bold row justify-content-left">Driver Number: {driverObj?.phoneNumber}</p>
-        <Link href={`/driver/${driverObj?.firebaseKey}`} passHref>
-          <Button variant="primary" className="m-2">VIEW</Button>
-        </Link>
         <Link href={`/driver/edit/${driverObj?.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
@@ -43,6 +43,7 @@ DriverCard.propTypes = {
     ThreePlCompany: PropTypes.string,
     route: PropTypes.string,
     vehicle_type: PropTypes.string,
+    loadOutdoor: PropTypes.string,
 
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,

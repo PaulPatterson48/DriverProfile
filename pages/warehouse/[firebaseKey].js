@@ -33,16 +33,18 @@ export default function ViewWarehouse() {
         </div>
       ) : (
         <div className="d-flex flex-wrap">
-          <WarehouseCard
-            warehouseObj={warehouses}
-            onUpdate={getWarehouseDetails}
-          />
-          {warehouses.drivers?.map((driver) => (
-            <DriverCard
-              driverObj={driver}
-              onUpdate={getWarehouseDetails}
-            />
-          ))}
+          <div>
+            <h2>Welcome To: {warehouses.warehouseName} </h2>
+            <h3>Number: {warehouses?.warehouseNumber} </h3>
+            <div className="d-flex flex-wrap">
+              {warehouses.drivers?.map((driver) => (
+                <DriverCard
+                  driverObj={driver}
+                  onUpdate={getWarehouseDetails}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       )}
 
@@ -50,3 +52,7 @@ export default function ViewWarehouse() {
 
   );
 }
+// {/* <WarehouseCard */}
+// warehouseObj={warehouses}
+// onUpdate={getWarehouseDetails}
+// {/* /> */}

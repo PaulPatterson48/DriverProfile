@@ -74,20 +74,27 @@ function WarehouseForm({ warehouseObj }) {
       </FloatingLabel>
 
       <FloatingLabel controlId="floatingInput3" label="loadOutdoor" className="mb-3">
-        <Form.Control
-          type="text"
-          placeholder="Load Out Door"
+        <Form.Select
+          aria-label=""
           name="loadOutDoor"
           value={formInput.loadOutDoor}
           onChange={handleChange}
           required
-        />
+        >
+          <option>Here is your Load Out Door</option>
+          <option value="Door 01">Door 01</option>
+          <option value="Door 02">Door 02</option>
+          <option value="Door 03">Door 03</option>
+          <option value="Door 04">Door 04</option>
+          <option value="Door 05">Door 05</option>
+          <option value="Door 06">Door 06</option>
+        </Form.Select>
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingInput4" label="vehicleNumber" className="mb-3">
+      <FloatingLabel controlId="floatingInput4" label="license plate" className="mb-3">
         <Form.Control
           type="text"
-          placeholder="Vehicle Number"
+          placeholder="license plate"
           name="vehicleNumber"
           value={formInput.vehicleNumber}
           onChange={handleChange}
