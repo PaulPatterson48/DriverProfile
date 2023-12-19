@@ -52,7 +52,3 @@ export default function ViewWarehouse() {
 
   );
 }
-// {/* <WarehouseCard */}
-// warehouseObj={warehouses}
-// onUpdate={getWarehouseDetails}
-// {/* /> */}
