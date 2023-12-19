@@ -18,7 +18,7 @@ function DriverCard({ driverObj, onUpdate }) {
   return (
     <Card style={{ width: '18rem', margin: '10px ' }}>
       <Link href={`/driver/${driverObj?.firebaseKey}`} passHref>
-        <img src={driverObj?.image} alt={driverObj?.driver_name} style={{ height: '250px ' }} />
+        <img className="shrink" src={driverObj?.image} alt={driverObj?.driver_name} style={{ height: '250px ' }} />
       </Link>
       <Card.Body>
         <Card.Title>{driverObj?.driver_name}</Card.Title>

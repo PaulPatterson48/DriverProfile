@@ -22,3 +22,14 @@ a {
 body {
   background-color: #dae8ea;
 }
+.shrink {
+  margin: 50px auto;
+  width: 250px;
+  height: 150px;
+  transition: .3s ease
+}
+.shrink:hover{
+  transform: scale=(0.6);
+  -webkit-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+}
